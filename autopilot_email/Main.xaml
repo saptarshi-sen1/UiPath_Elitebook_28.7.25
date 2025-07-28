@@ -1,0 +1,74 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668.6666666666666,3034" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="Project Report: Automated Student Marks Distribution System&#xA;Developer: Our grp name along with members and mentor name&#xA;Platform Used: UiPath Studio&#xA;Integrated Services: Google Sheets &amp; SMTP Mail&#xA;&#xA;Workflow Summary&#xA;1. Reading Student Data&#xA;The automation begins by reading student data (including marks, names, roll numbers, and emails) from a Google Sheet.&#xA;&#xA;The data is stored in a DataTable for processing.&#xA;&#xA;2. Collecting Teacher’s Details&#xA;The teacher is prompted to enter their name and contact number through Input Dialogs.&#xA;&#xA;The phone number is validated to ensure it has at least 10 digits and only contains numbers.&#xA;&#xA;If invalid, the system asks again until a correct number is entered.&#xA;&#xA;3. Asking for Student Reviews&#xA;The teacher is asked whether they would like to provide personalized reviews for any students.&#xA;&#xA;If &quot;Yes&quot;, the teacher specifies how many students will receive reviews.&#xA;&#xA;4. Taking Student Review Details&#xA;A loop runs based on the count provided by the teacher.&#xA;&#xA;For each iteration:&#xA;&#xA;The teacher is asked to enter a student's name, email, or roll number.&#xA;&#xA;The system checks if the input matches any student record.&#xA;&#xA;If matched, the teacher provides the review message, which is stored in a dictionary.&#xA;&#xA;5. Validating and Cleaning Marks Data&#xA;The automation checks each student's marks:&#xA;&#xA;If any marks are missing (blank or null), they are replaced with 0.&#xA;&#xA;The system ensures marks do not exceed their maximum limits (e.g., Assignment1 should not exceed 15).&#xA;&#xA;If any invalid mark is found, a message is shown and the automation stops.&#xA;&#xA;6. Preparing Email Body&#xA;For each student, a personalized email body is created including:&#xA;&#xA;Assignment 1, Assignment 2, Attendance, Internals, and Mid-Semester marks.&#xA;&#xA;Internals are calculated as the sum of assignment and attendance marks.&#xA;&#xA;7. Adding Review (If Available)&#xA;If the student was given a review:&#xA;&#xA;The system checks the dictionary using the name, email, or roll number (case-insensitive).&#xA;&#xA;The review message is added to the email body.&#xA;&#xA;8. Appending Teacher’s Contact Info&#xA;A footer is added to every email:&#xA;&#xA;Includes a closing message with the teacher’s name and phone number.&#xA;&#xA;Encourages the student to reach out if they have any doubts or questions.&#xA;&#xA;9. Sending Emails via SMTP&#xA;Each personalized email is sent to the respective student using SMTP.&#xA;&#xA;The body is in plain text and includes all the calculated marks and any additional feedback.&#xA;&#xA;Benefits of the System&#xA;Reduces manual effort in emailing student marks.&#xA;&#xA;Ensures accurate data with real-time validation and cleaning.&#xA;&#xA;Enables personalized communication between teacher and student.&#xA;&#xA;Adds professionalism with teacher details and optional feedback.&#xD;&#xA;&#xD;&#xA;For the task use gmail with the email I have authenticated and spreadsheet" sap:VirtualizedContainerService.HintSize="462,3011.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
+  </Sequence>
+</Activity>

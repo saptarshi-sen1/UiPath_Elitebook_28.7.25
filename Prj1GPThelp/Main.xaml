@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:dv="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core">
+  <Sequence DisplayName="Main Sequence">
+    <dv:UseExcelFile DisplayName="Use Excel File" WorkbookPath="[&quot;path-to-your-file.xlsx&quot;]">
+      <Sequence>
+
+        <!-- Task 1: Copy Sheet1 to Sheet2 -->
+        <dv:CopySheet DisplayName="Copy Sheet1 to Sheet2" SourceSheetName="Sheet1" DestinationSheetName="Sheet2" />
+
+        <!-- Task 2: Delete Rows where Department is IT -->
+        <dv:ForEachExcelRow DisplayName="For Each Row in Sheet2" SheetName="Sheet2">
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <If Condition="[CurrentRow(&quot;Department&quot;).ToString.Equals(&quot;IT&quot;)]">
+              <If.Then>
+                <dv:DeleteRow DisplayName="Delete Row" />
+              </If.Then>
+            </If>
+          </ActivityAction>
+        </dv:ForEachExcelRow>
+
+        <!-- Task 3: List All Sheets -->
+        <dv:GetWorkbookSheets DisplayName="Get Sheets" Sheets="[sheetList]" />
+        <ui:ForEach x:TypeArguments="x:String" Values="[sheetList]" DisplayName="Log Each Sheet Name">
+          <ui:LogMessage DisplayName="Log Sheet Name" Text="[item]" Level="Info" />
+        </ui:ForEach>
+
+        <!-- Build table for filtered data -->
+        <ui:BuildDataTable DisplayName="Build Filtered Table" DataTable="[dtFilteredColumns]">
+          <ui:BuildDataTable.Columns>
+            <ui:DataColumn Name="Name" Type="System.String" />
+            <ui:DataColumn Name="Department" Type="System.String" />
+          </ui:BuildDataTable.Columns>
+        </ui:BuildDataTable>
+
+        <!-- Task 4: Read Name & Department from Sheet2 -->
+        <dv:ForEachExcelRow DisplayName="Read From Sheet2" SheetName="Sheet2">
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence>
+              <ui:AddDataRow DisplayName="Add Filtered Row" DataTable="[dtFilteredColumns]">
+                <ui:AddDataRow.DataRow>
+                  <x:Array Type="{x:Type s:Object}">
+                    <s:String>[CurrentRow(&quot;Name&quot;).ToString]</s:String>
+                    <s:String>[CurrentRow(&quot;Department&quot;).ToString]</s:String>
+                  </x:Array>
+                </ui:AddDataRow.DataRow>
+              </ui:AddDataRow>
+            </Sequence>
+          </ActivityAction>
+        </dv:ForEachExcelRow>
+
+        <!-- Write the filtered data to new sheet -->
+        <dv:WriteRange DisplayName="Write Filtered Data" SheetName="Filtered Data" DataTable="[dtFilteredColumns]" AddHeaders="True" />
+
+      </Sequence>
+    </dv:UseExcelFile>
+  </Sequence>
+</Activity>

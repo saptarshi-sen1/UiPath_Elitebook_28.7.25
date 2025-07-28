@@ -1,0 +1,30 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "columnCount&Sequence_3",
+        "rowCount&Sequence_3",
+        "comb&Sequence_3",
+        "D&Sequence_1",
+        "dtFilteredCols&Sequence_1",
+        "sheetName&Sequence_1",
+        "B&Sequence_1",
+        "dtFiltered&Sequence_1",
+        "dtSheet1&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Saptarshi (Person 1) - …",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "lB_yOCJhnES4DnCMQkoqzw",
+  "Reference": "gTmZMv5iHk-u1NTP5WK0pg/lB_yOCJhnES4DnCMQkoqzw",
+  "ParentRef": "gTmZMv5iHk-u1NTP5WK0pg/-DhrxlQIjE2hgwBRZPdIVQ",
+  "Created": "2025-05-18T18:08:52.2894689Z",
+  "Updated": "2025-05-18T18:08:52.2894689Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

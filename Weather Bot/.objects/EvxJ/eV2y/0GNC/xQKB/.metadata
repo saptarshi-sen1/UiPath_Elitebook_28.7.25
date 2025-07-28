@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Clear with periodic clo…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "xQKBxP-A2km6RbxAe3I9kw",
+  "Reference": "ug3HjWBFj0enERhavO_3SA/xQKBxP-A2km6RbxAe3I9kw",
+  "ParentRef": "ug3HjWBFj0enERhavO_3SA/0GNCpjGPoUyKFXfUSKxv3Q",
+  "Created": "2025-03-23T19:06:31.6077284Z",
+  "Updated": "2025-03-23T19:06:31.6077284Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

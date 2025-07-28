@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="kquDgDwVBUOgqNq9Ubi8wg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.com/search" CVScreenId="8624b9f9-f459-45ce-8ab6-902a6a0b6d03" CvTextArea="1065, 743, 60, 21" CvType="AnyWordGroup" DesignTimeRectangle="1067, 740, 58, 27" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='wob_dc' tag='SPAN' type='' class='' /&gt;" Guid="5ec0bf7d-b59e-4fe0-b49d-828998c7b9bc" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Weather in Delhi in Celcius - Google Search' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2d44b1fd9b7a4e0f69ddedd890dd0b2d.png" xmlns="">0ZvSSWiJzcUGX3ATDVzc32Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

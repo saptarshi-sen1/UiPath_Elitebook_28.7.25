@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome USC KIIT is UiPath Student Community in KIIT powered by UiPath that aims to  Co",
+  "Type": "App",
+  "Id": "tFkxCFIPREulmVG0CBnDvA",
+  "Reference": "vajdc8L8O0-PVY3KWyzjUA/tFkxCFIPREulmVG0CBnDvA",
+  "Created": "2025-03-21T17:37:09.1441439Z",
+  "Updated": "2025-03-21T17:37:09.1441439Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
